@@ -1,17 +1,35 @@
 import 'package:flutter/material.dart';
 
+import '../utils/colors.dart';
+
 class CommunityScreen extends StatefulWidget {
   @override
   _CommunityScreenState createState() => _CommunityScreenState();
 }
 
 class _CommunityScreenState extends State<CommunityScreen> {
-  List<Map<String, dynamic>> _posts = [    {      'user': 'Jane Doe',      'text': 'I\'ve been struggling with anxiety lately. Any tips?',      'comments': [        {'user': 'John Smith', 'text': 'Have you tried meditation? It helps me.'},        {'user': 'Sara Johnson', 'text': 'You should see a therapist.'},      ]
+  List<Map<String, dynamic>> _posts = [
+    {
+      'user': 'Jane Doe',
+      'text': 'I\'ve been struggling with anxiety lately. Any tips?',
+      'comments': [
+        {
+          'user': 'John Smith',
+          'text': 'Have you tried meditation? It helps me.'
+        },
+        {'user': 'Sara Johnson', 'text': 'You should see a therapist.'},
+      ]
     },
     {
       'user': 'John Smith',
       'text': 'Does anyone else experience chronic pain?',
-      'comments': [        {'user': 'Jane Doe', 'text': 'I do. It can be really tough.'},        {'user': 'Sara Johnson', 'text': 'I don\'t, but I\'m here to support you.'},      ]
+      'comments': [
+        {'user': 'Jane Doe', 'text': 'I do. It can be really tough.'},
+        {
+          'user': 'Sara Johnson',
+          'text': 'I don\'t, but I\'m here to support you.'
+        },
+      ]
     },
   ];
 
@@ -19,7 +37,10 @@ class _CommunityScreenState extends State<CommunityScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Community'),
+        automaticallyImplyLeading: false,
+        backgroundColor: AppColor.klemon,
+        elevation: 0,
+        title: Center(child: Text('Community')),
         actions: [
           IconButton(
             icon: Icon(Icons.chat),

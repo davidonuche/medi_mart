@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/colors.dart';
+
 class PharmacyScreen extends StatefulWidget {
   const PharmacyScreen({Key? key}) : super(key: key);
 
@@ -8,31 +10,11 @@ class PharmacyScreen extends StatefulWidget {
 }
 
 class _PharmacyScreenState extends State<PharmacyScreen> {
-  List<String> _drugsList = [
-    "Panadol",
-    "Amoxicillin," "Ibuprofen" "Pepto-Bismol",
-    "Benadryl",
-    'Aspirin',
-    'Tylenol',
-    'Advil',
-    'Naproxen',
-    'Claritin'
-  ];
-  List<String> _filteredDrugsList = [];
   @override
   void initState() {
     super.initState();
-    _filteredDrugsList = _drugsList;
   }
 
-  void _filterDrugsList(String searchText) {
-    List<String> filteredList = [];
-    filteredList.addAll(_drugsList.where(
-        (drug) => drug.toLowerCase().contains(searchText.toLowerCase())));
-    setState(() {
-      _filteredDrugsList = filteredList;
-    });
-  }
 
   List<Pharmacy> pharmacies = [
     Pharmacy(
@@ -71,7 +53,10 @@ class _PharmacyScreenState extends State<PharmacyScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pharmacies'),
+        automaticallyImplyLeading: false,
+        backgroundColor: AppColor.klemon,
+        elevation: 0,
+        title: Center(child: Text('Pharmacies')),
         centerTitle: true,
       ),
       body: Column(

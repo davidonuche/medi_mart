@@ -19,7 +19,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _fullname = TextEditingController();
   final TextEditingController _email = TextEditingController();
   final TextEditingController _pass = TextEditingController();
-  bool _obscureTextLogin = true, _enable = false, _startloading = false;
+  bool _obscureTextLogin = true;
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +100,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         textInputAction: TextInputAction.next,
                         onChanged: (v) {
                           setState(() {
-                            _enable = _formKey.currentState!.validate();
                           });
                           return null;
                         },
@@ -126,7 +125,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         textInputAction: TextInputAction.next,
                         onChanged: (v) {
                           setState(() {
-                            _enable = _formKey.currentState!.validate();
                           });
                           return null;
                         },
@@ -151,7 +149,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         textInputAction: TextInputAction.done,
                         onChanged: (v) {
                           setState(() {
-                            _enable = _formKey.currentState!.validate();
                           });
                           return null;
                         },
@@ -260,29 +257,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
-  Widget _chgIcon() {
-    return !_obscureTextLogin
-        ? const Icon(Icons.visibility_off_outlined)
-        : const Icon(Icons.visibility_outlined);
-  }
 
-  _toggleLogin() {
-    setState(() {
-      _obscureTextLogin = !_obscureTextLogin;
-    });
-  }
 
   void startLoading() {
     setState(() {
-      _startloading = true;
-      _enable = false;
     });
   }
 
   void stopLoading() {
     setState(() {
-      _startloading = false;
-      _enable = true;
     });
   }
 }

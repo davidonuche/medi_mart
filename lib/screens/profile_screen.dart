@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 // import 'package:hive_flutter/adapters.dart';
 import 'package:medi_mart/utils/colors.dart';
 // import '../../models/user_info_model.dart';
-import '../../others/edit_profile.dart';
-import '../../register/change_password.dart';
-import '../../utils/route_names.dart';
-import '../../widgets/dialog_widget.dart';
+import '../others/edit_profile.dart';
+import '../register/change_password.dart';
+import '../utils/route_names.dart';
+import '../widgets/dialog_widget.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -26,8 +26,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       backgroundColor: AppColor.mainColor,
       appBar: AppBar(
-        elevation: 0,
         automaticallyImplyLeading: false,
+        backgroundColor: AppColor.klemon,
+        elevation: 0,
         title: Center(child: Text("Profile")),
         actions: [
           TextButton(
@@ -40,7 +41,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     return EditProfile();
                   });
             },
-            child: Text('Edit'),
+            child: Text('Edit', style: TextStyle(color: AppColor.kdarkblue)),
           )
         ],
       ),
@@ -146,11 +147,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   },
                   leading: Icon(
                     Icons.exit_to_app,
-                    color: AppColor.klemon,
+                    color: AppColor.kblue,
                   ),
                   title: Text(
                     'Log Out',
-                    style: TextStyle(color: AppColor.klemon),
+                    style: TextStyle(color: AppColor.kblue),
                   ),
                   trailing: Icon(Icons.arrow_forward_ios, size: 16),
                 ),

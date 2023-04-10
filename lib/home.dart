@@ -3,8 +3,8 @@ import 'utils/colors.dart';
 import 'screens/community_screen.dart';
 import 'screens/doctor_screen.dart';
 import 'screens/home_screen.dart';
-import 'screens/pages/pharmacy_screen.dart';
-import 'screens/pages/profile_screen.dart';
+import 'screens/pharmacy_screen.dart';
+import 'screens/profile_screen.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

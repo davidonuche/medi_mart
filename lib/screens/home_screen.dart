@@ -130,7 +130,7 @@ class HomeScreen extends StatelessWidget {
             padding: EdgeInsets.all(5.0),
             child: Text(
               name,
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
           ),
         ],

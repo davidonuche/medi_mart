@@ -18,7 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _email = TextEditingController();
   final TextEditingController _pass = TextEditingController();
-  bool _obscureTextLogin = true, _enable = true;
+  bool _obscureTextLogin = true;
 
   @override
   Widget build(BuildContext context) {
@@ -210,27 +210,15 @@ class _LoginScreenState extends State<LoginScreen> {
     // });
   }
 
-  Widget _chgIcon() {
-    return !_obscureTextLogin
-        ? const Icon(Icons.visibility_off_outlined)
-        : const Icon(Icons.visibility_outlined);
-  }
 
-  _toggleLogin() {
-    setState(() {
-      _obscureTextLogin = !_obscureTextLogin;
-    });
-  }
 
   void startLoading() {
     setState(() {
-      _enable = false;
     });
   }
 
   void stopLoading() {
     setState(() {
-      _enable = true;
     });
   }
 

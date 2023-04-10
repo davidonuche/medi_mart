@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medi_mart/utils/colors.dart';
 
 class DoctorScreen extends StatefulWidget {
   const DoctorScreen({Key? key}) : super(key: key);
@@ -60,7 +61,10 @@ class _DoctorScreenState extends State<DoctorScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Find a Doctor'),
+        automaticallyImplyLeading: false,
+        backgroundColor: AppColor.klemon,
+        elevation: 0,
+        title: Center(child: Text('Find a Doctor')),
         actions: [
           IconButton(
             onPressed: () {},
